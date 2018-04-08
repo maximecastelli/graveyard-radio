@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: graveyard-radio
+#  repo: graveyard-radio
   branch: master
 
-publish_mode: editorial_workflow
+#publish_mode: editorial_workflow
 
 media_folder: "assets/images"
 
