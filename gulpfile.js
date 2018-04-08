@@ -6,8 +6,8 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync');
-var server = require('gulp-server-livereload');
+//var browserSync = require('browser-sync');
+//var server = require('gulp-server-livereload');
 
 
 var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
@@ -23,14 +23,14 @@ gulp.task('jekyll-build', function (done) {
 
 /*
  * Rebuild Jekyll & reload browserSync
- */
+
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 	browserSync.reload();
 });
-
+*/
 /*
  * Build the jekyll site and launch browser-sync
- */
+
 gulp.task('browser-sync', ['jekyll-build'], function() {
 	browserSync({
 		server: {
@@ -38,6 +38,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 		}
 	});
 });
+*/
 
 /*
 * Compile and minify sass
@@ -91,4 +92,4 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', [ 'libs', 'js', 'sass', 'imagemin','browser-sync', 'watch']);
+gulp.task('default', [ 'libs', 'js', 'sass', 'imagemin', 'watch']);
