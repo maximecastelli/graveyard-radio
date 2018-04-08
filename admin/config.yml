@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: graveyard-radio
+  repo: github.com/maximecastelli/graveyard-radio
   branch: master
 
 #publish_mode: editorial_workflow
