@@ -43,7 +43,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 * Compile and minify sass
 */
 gulp.task('sass', function() {
-  gulp.src('src/styles/**/*.scss')
+  gulp.src('_src/styles/**/*.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(csso())
@@ -55,7 +55,7 @@ gulp.task('sass', function() {
  * Minify images
  */
 gulp.task('imagemin', function() {
-	return gulp.src('src/img/**/*.{jpg,png,gif}')
+	return gulp.src('_src/img/**/*.{jpg,png,gif}')
 		.pipe(plumber())
 		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 		.pipe(gulp.dest('assets/img/'));
@@ -65,7 +65,7 @@ gulp.task('imagemin', function() {
  * Compile and minify js
  */
 gulp.task('js', function(){
-	return gulp.src('src/js/**/*.js')
+	return gulp.src('_src/js/**/*.js')
 		.pipe(plumber())
 		.pipe(concat('main.js'))
 		.pipe(uglify())
@@ -77,15 +77,15 @@ gulp.task('js', function(){
  */
 
  gulp.task('libs', function(){
- 	return gulp.src('src/styles/_libs/*.css')
+ 	return gulp.src('_src/styles/_libs/*.css')
  		.pipe(plumber())
  		.pipe(gulp.dest('assets/css/libs'))
  });
 
 gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['js']);
-	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
+  gulp.watch('_src/styles/**/*.scss', ['sass']);
+  gulp.watch('_src/js/**/*.js', ['js']);
+	gulp.watch('_src/img/**/*.{jpg,png,gif}', ['imagemin']);
   gulp.watch(['*html', '_pages/*html', '_includes/*html', '_layouts/*.html', '_pages/projects/*html' ], ['jekyll-rebuild']);
 
 
